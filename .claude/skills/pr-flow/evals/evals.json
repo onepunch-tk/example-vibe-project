@@ -1,5 +1,5 @@
 {
-  "skill_name": "pr-create",
+  "skill_name": "pr-flow",
   "notes": "Each eval runs inside an isolated sandbox git repo built by make_sandbox.sh. The sandbox has a local bare 'origin' so `git push` works, but there is NO GitHub remote, so the actual `gh pr create` cannot run. Each run is told to perform every step EXCEPT the network gh call, and instead write the final PR title to PR_TITLE.txt and the final PR body to PR_BODY.md in the repo root. We grade those artifacts plus the git state (branch, commit).",
   "evals": [
     {
