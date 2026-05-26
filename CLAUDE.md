@@ -89,7 +89,7 @@ tests/       # vitest 테스트 (src 밖, 여기에만 위치)
 
 ## 5. 지금 진행 중 (TODO)
 
-- [ ] `/agent-loop` 페이지에 단계별 호버 툴팁 추가 
+- [x] `/agent-loop` 페이지에 단계별 호버 툴팁 추가 (PR #3 머지 완료)
   - branch: `feat/hover-tooltip`
   - 참조: `@IDEAS.md` #1 섹션
 - [ ] 에러 응답 데이터 보강. `trackingId` 추가
