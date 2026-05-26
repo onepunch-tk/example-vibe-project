@@ -5,7 +5,25 @@
 # set -e 는 일부러 빼서 비매칭 종료코드가 흐름을 끊지 않게 한다.
 set -uo pipefail
 
-cat >/dev/null   # stdin 소비 (내용 불필요)
+input=$(cat)   # stdin(JSON) 보관 — 편집 대상 경로 검사에 사용
+
+# 편집 대상 파일 경로 추출
+file_path=$(printf '%s' "$input" | jq -r '.tool_input.file_path // empty' 2>/dev/null || echo "")
+
+# plan 파일(~/.claude/plans/...) 및 레포 루트 밖 파일은 "소스"가 아니므로 통과.
+# 이 가드는 레포 내 소스를 main/master 에서 편집하지 못하게 하는 것이 목적이다.
+if [ -n "$file_path" ]; then
+  case "$file_path" in
+    "$HOME"/.claude/plans/*) exit 0 ;;   # plan 파일은 항상 예외
+  esac
+  repo_root=$(git rev-parse --show-toplevel 2>/dev/null || echo "")
+  if [ -n "$repo_root" ]; then
+    case "$file_path" in
+      "$repo_root"/*) ;;        # 레포 안 → 계속 검사
+      *) exit 0 ;;              # 레포 밖 → 가드 비대상
+    esac
+  fi
+fi
 
 branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "")
 
