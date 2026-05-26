@@ -22,9 +22,9 @@ export default function AgentLoopPage() {
           <span className="text-brand-gradient">에이전트 루프</span>
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--color-muted)]">
-          Claude Code의 모든 대화는 6단계 순환으로 일어납니다. 한 사이클이 끝나면
-          관찰 결과가 다시 다음 사이클의 컨텍스트로 들어가, 점진적으로 목표에
-          수렴합니다.
+          Claude Code의 모든 대화는 6단계 순환으로 일어납니다. 한 사이클이
+          끝나면 관찰 결과가 다시 다음 사이클의 컨텍스트로 들어가, 점진적으로
+          목표에 수렴합니다.
         </p>
       </header>
 
@@ -38,7 +38,9 @@ export default function AgentLoopPage() {
       </section>
 
       <section className="surface p-6">
-        <h2 className="mb-3 text-lg font-semibold">왜 이 사이클을 알아야 하나?</h2>
+        <h2 className="mb-3 text-lg font-semibold">
+          왜 이 사이클을 알아야 하나?
+        </h2>
         <ul className="space-y-2 text-sm text-[var(--color-muted)]">
           <li>
             <span className="text-[var(--color-fg)]">컨텍스트 수집</span>{" "}
@@ -46,14 +48,15 @@ export default function AgentLoopPage() {
             <code>CLAUDE.md</code>가 중요한 이유입니다.
           </li>
           <li>
-            <span className="text-[var(--color-fg)]">권한 요청</span>{" "}
-            단계는 사람이 개입할 수 있는 유일한 지점입니다. Plan Mode는 여기서
-            계획을 한 번 더 검토합니다.
+            <span className="text-[var(--color-fg)]">권한 요청</span> 단계는
+            사람이 개입할 수 있는 유일한 지점입니다. Plan Mode는 여기서 계획을
+            한 번 더 검토합니다.
           </li>
           <li>
-            <span className="text-[var(--color-fg)]">결과 관찰</span>{" "}
-            단계에서 테스트·로그·에러가 다음 사이클로 들어가야 self-correction
-            루프가 닫힙니다. 강의의 "Closed-loop Validation"이 이 부분입니다.
+            <span className="text-[var(--color-fg)]">결과 관찰</span> 단계에서
+            테스트·로그·에러가 다음 사이클로 들어가야 self-correction 루프가
+            닫힙니다. 강의의 &ldquo;Closed-loop Validation&rdquo;이 이
+            부분입니다.
           </li>
         </ul>
       </section>
