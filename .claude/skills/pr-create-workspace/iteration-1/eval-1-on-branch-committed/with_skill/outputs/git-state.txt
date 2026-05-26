@@ -1,0 +1,10 @@
+BRANCH: fix/feedback-empty-body
+--- log ---
+f50cce8 fix(api/feedback): reject empty request body with 400
+d62168b chore: project skeleton
+--- status ---
+?? PR_BODY.md
+?? PR_TITLE.txt
+--- last commit full ---
+fix(api/feedback): reject empty request body with 400
+

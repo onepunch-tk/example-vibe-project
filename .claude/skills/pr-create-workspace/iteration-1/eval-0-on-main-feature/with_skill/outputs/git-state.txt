@@ -1,0 +1,15 @@
+BRANCH: feat/hover-tooltip
+--- log ---
+3dd21a6 feat(agent-loop): add step hover tooltips
+b52d05f chore: project skeleton
+--- status ---
+?? PR_BODY.md
+?? PR_TITLE.txt
+--- last commit full ---
+feat(agent-loop): add step hover tooltips
+
+Wrap each agent-loop step in a StepTooltip component that shows a
+Korean hint on hover via the title attribute.
+
+Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+

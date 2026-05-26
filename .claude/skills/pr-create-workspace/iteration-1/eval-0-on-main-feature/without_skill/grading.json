@@ -1,0 +1,54 @@
+{
+  "eval": "eval-0-on-main-feature",
+  "run": "without_skill",
+  "passed": 5,
+  "total": 8,
+  "expectations": [
+    {
+      "text": "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+      "passed": false,
+      "evidence": "sections found: {\"Summary\": false, \"Changes\": false, \"Testing\": false, \"Related\": false, \"Screenshots/Impact\": false}"
+    },
+    {
+      "text": "PR body prose is in English (low Hangul ratio)",
+      "passed": false,
+      "evidence": "hangul ratio=0.45 (threshold <0.15)"
+    },
+    {
+      "text": "No leftover HTML template comments (<!-- -->) in final body",
+      "passed": true,
+      "evidence": "no '<!--' found"
+    },
+    {
+      "text": "Title follows Conventional Commits",
+      "passed": true,
+      "evidence": "title='feat: agent-loop 단계별 호버 툴팁 추가'"
+    },
+    {
+      "text": "Generated-with-Claude-Code footer present",
+      "passed": true,
+      "evidence": "footer present"
+    },
+    {
+      "text": "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+      "passed": false,
+      "evidence": "names_check=False has_result=False unchecked_only=False; testing=''"
+    },
+    {
+      "text": "Branched off main onto a feature branch",
+      "passed": true,
+      "evidence": "branch=feat/hover-tooltip"
+    },
+    {
+      "text": "Commit message includes Co-Authored-By trailer",
+      "passed": true,
+      "evidence": "trailer in last commit"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 3,
+    "total": 8,
+    "pass_rate": 0.625
+  }
+}

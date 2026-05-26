@@ -1,0 +1,18 @@
+BRANCH: feat/error-response-data
+--- log ---
+b830341 fix(feedback): empty request body now returns 400 instead of 500
+3581162 chore: project skeleton
+--- status ---
+?? PR_BODY.md
+?? PR_TITLE.txt
+--- last commit full ---
+fix(feedback): empty request body now returns 400 instead of 500
+
+POST /api/feedback called req.json() directly, which throws on an empty
+body and surfaced as an unhandled 500. Read the raw text first and throw
+AppError(400, "EMPTY_BODY") when the body is missing before parsing.
+
+Refs #5
+
+Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+

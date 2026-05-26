@@ -1,0 +1,15 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-1-on-branch-committed",
+  "prompt": "이 브랜치 작업 다 됐고 커밋도 했어. 리뷰 받게 PR 만들어줘.",
+  "assertions": [
+    "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+    "PR body prose is in English (low Hangul ratio)",
+    "No leftover HTML template comments (<!-- -->) in final body",
+    "Title follows Conventional Commits",
+    "Generated-with-Claude-Code footer present",
+    "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+    "Did NOT create a new branch (stayed on the existing feature branch)",
+    "Only one commit ahead of main (no redundant empty commit)"
+  ]
+}

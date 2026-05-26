@@ -1,0 +1,54 @@
+{
+  "eval": "eval-0-on-main-feature",
+  "run": "with_skill",
+  "passed": 8,
+  "total": 8,
+  "expectations": [
+    {
+      "text": "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+      "passed": true,
+      "evidence": "sections found: {\"Summary\": true, \"Changes\": true, \"Testing\": true, \"Related\": true, \"Screenshots/Impact\": true}"
+    },
+    {
+      "text": "PR body prose is in English (low Hangul ratio)",
+      "passed": true,
+      "evidence": "hangul ratio=0.02 (threshold <0.15)"
+    },
+    {
+      "text": "No leftover HTML template comments (<!-- -->) in final body",
+      "passed": true,
+      "evidence": "no '<!--' found"
+    },
+    {
+      "text": "Title follows Conventional Commits",
+      "passed": true,
+      "evidence": "title='feat(agent-loop): add step hover tooltips'"
+    },
+    {
+      "text": "Generated-with-Claude-Code footer present",
+      "passed": true,
+      "evidence": "footer present"
+    },
+    {
+      "text": "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+      "passed": true,
+      "evidence": "names_check=True has_result=True unchecked_only=False; testing='Ran the repo's checks on `feat/hover-tooltip`; all passed:\n\n- `npm run test` → `✓ 12 passed (12)`\n- `npm run typecheck` '"
+    },
+    {
+      "text": "Branched off main onto a feature branch",
+      "passed": true,
+      "evidence": "branch=feat/hover-tooltip"
+    },
+    {
+      "text": "Commit message includes Co-Authored-By trailer",
+      "passed": true,
+      "evidence": "trailer in last commit"
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "pass_rate": 1.0
+  }
+}

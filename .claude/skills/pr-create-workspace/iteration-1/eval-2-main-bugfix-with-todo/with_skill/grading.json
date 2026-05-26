@@ -1,0 +1,59 @@
+{
+  "eval": "eval-2-main-bugfix-with-todo",
+  "run": "with_skill",
+  "passed": 9,
+  "total": 9,
+  "expectations": [
+    {
+      "text": "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+      "passed": true,
+      "evidence": "sections found: {\"Summary\": true, \"Changes\": true, \"Testing\": true, \"Related\": true, \"Screenshots/Impact\": true}"
+    },
+    {
+      "text": "PR body prose is in English (low Hangul ratio)",
+      "passed": true,
+      "evidence": "hangul ratio=0.02 (threshold <0.15)"
+    },
+    {
+      "text": "No leftover HTML template comments (<!-- -->) in final body",
+      "passed": true,
+      "evidence": "no '<!--' found"
+    },
+    {
+      "text": "Title follows Conventional Commits",
+      "passed": true,
+      "evidence": "title='fix(api/feedback): handle empty request body'"
+    },
+    {
+      "text": "Generated-with-Claude-Code footer present",
+      "passed": true,
+      "evidence": "footer present"
+    },
+    {
+      "text": "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+      "passed": true,
+      "evidence": "names_check=True has_result=True unchecked_only=False; testing='- `npm run test` — ✓ 12 passed (12)\n- `npm run typecheck` — tsc --noEmit: no errors\n- `npm run lint` — eslint: no proble'"
+    },
+    {
+      "text": "Branched off main onto a feature branch",
+      "passed": true,
+      "evidence": "branch=fix/feedback-empty-body"
+    },
+    {
+      "text": "Related section references issue #5",
+      "passed": true,
+      "evidence": "related='- Closes #5\n- CLAUDE.md TODO §5: \"에러 응답 데이터 보강. feedback API 빈 body 처리 + trackingId 추가\"\n  (this PR c'"
+    },
+    {
+      "text": "Related section references the CLAUDE.md TODO",
+      "passed": true,
+      "evidence": "related mentions TODO/CLAUDE.md: True"
+    }
+  ],
+  "summary": {
+    "passed": 9,
+    "failed": 0,
+    "total": 9,
+    "pass_rate": 1.0
+  }
+}

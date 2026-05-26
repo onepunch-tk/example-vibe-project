@@ -1,0 +1,54 @@
+{
+  "eval": "eval-1-on-branch-committed",
+  "run": "without_skill",
+  "passed": 4,
+  "total": 8,
+  "expectations": [
+    {
+      "text": "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+      "passed": false,
+      "evidence": "sections found: {\"Summary\": false, \"Changes\": false, \"Testing\": false, \"Related\": false, \"Screenshots/Impact\": false}"
+    },
+    {
+      "text": "PR body prose is in English (low Hangul ratio)",
+      "passed": false,
+      "evidence": "hangul ratio=0.26 (threshold <0.15)"
+    },
+    {
+      "text": "No leftover HTML template comments (<!-- -->) in final body",
+      "passed": true,
+      "evidence": "no '<!--' found"
+    },
+    {
+      "text": "Title follows Conventional Commits",
+      "passed": true,
+      "evidence": "title='fix(api/feedback): reject empty request body with 400'"
+    },
+    {
+      "text": "Generated-with-Claude-Code footer present",
+      "passed": false,
+      "evidence": "footer missing"
+    },
+    {
+      "text": "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+      "passed": false,
+      "evidence": "names_check=False has_result=False unchecked_only=False; testing=''"
+    },
+    {
+      "text": "Did NOT create a new branch (stayed on the existing feature branch)",
+      "passed": true,
+      "evidence": "branch=fix/feedback-empty-body"
+    },
+    {
+      "text": "Only one commit ahead of main (no redundant empty commit)",
+      "passed": true,
+      "evidence": "feature commits ahead=1 (log lines=2)"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 4,
+    "total": 8,
+    "pass_rate": 0.5
+  }
+}

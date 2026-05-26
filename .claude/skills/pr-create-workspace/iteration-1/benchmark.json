@@ -1,0 +1,436 @@
+{
+  "metadata": {
+    "skill_name": "pr-create",
+    "skill_path": "/Users/tkstart/Desktop/development/lectures/example-vibe-project/.claude/skills/pr-create",
+    "executor_model": "claude-opus-4-7",
+    "analyzer_model": "claude-opus-4-7",
+    "timestamp": "2026-05-23T17:28:26.470253+00:00",
+    "evals_run": [
+      0,
+      1,
+      2
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "eval-0-on-main-feature",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 131.9,
+        "tokens": 27477,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+          "passed": true,
+          "evidence": "sections found: {\"Summary\": true, \"Changes\": true, \"Testing\": true, \"Related\": true, \"Screenshots/Impact\": true}"
+        },
+        {
+          "text": "PR body prose is in English (low Hangul ratio)",
+          "passed": true,
+          "evidence": "hangul ratio=0.02 (threshold <0.15)"
+        },
+        {
+          "text": "No leftover HTML template comments (<!-- -->) in final body",
+          "passed": true,
+          "evidence": "no '<!--' found"
+        },
+        {
+          "text": "Title follows Conventional Commits",
+          "passed": true,
+          "evidence": "title='feat(agent-loop): add step hover tooltips'"
+        },
+        {
+          "text": "Generated-with-Claude-Code footer present",
+          "passed": true,
+          "evidence": "footer present"
+        },
+        {
+          "text": "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+          "passed": true,
+          "evidence": "names_check=True has_result=True unchecked_only=False; testing='Ran the repo's checks on `feat/hover-tooltip`; all passed:\n\n- `npm run test` → `✓ 12 passed (12)`\n- `npm run typecheck` '"
+        },
+        {
+          "text": "Branched off main onto a feature branch",
+          "passed": true,
+          "evidence": "branch=feat/hover-tooltip"
+        },
+        {
+          "text": "Commit message includes Co-Authored-By trailer",
+          "passed": true,
+          "evidence": "trailer in last commit"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "eval-0-on-main-feature",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.625,
+        "passed": 5,
+        "failed": 3,
+        "total": 8,
+        "time_seconds": 104.8,
+        "tokens": 19916,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+          "passed": false,
+          "evidence": "sections found: {\"Summary\": false, \"Changes\": false, \"Testing\": false, \"Related\": false, \"Screenshots/Impact\": false}"
+        },
+        {
+          "text": "PR body prose is in English (low Hangul ratio)",
+          "passed": false,
+          "evidence": "hangul ratio=0.45 (threshold <0.15)"
+        },
+        {
+          "text": "No leftover HTML template comments (<!-- -->) in final body",
+          "passed": true,
+          "evidence": "no '<!--' found"
+        },
+        {
+          "text": "Title follows Conventional Commits",
+          "passed": true,
+          "evidence": "title='feat: agent-loop 단계별 호버 툴팁 추가'"
+        },
+        {
+          "text": "Generated-with-Claude-Code footer present",
+          "passed": true,
+          "evidence": "footer present"
+        },
+        {
+          "text": "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+          "passed": false,
+          "evidence": "names_check=False has_result=False unchecked_only=False; testing=''"
+        },
+        {
+          "text": "Branched off main onto a feature branch",
+          "passed": true,
+          "evidence": "branch=feat/hover-tooltip"
+        },
+        {
+          "text": "Commit message includes Co-Authored-By trailer",
+          "passed": true,
+          "evidence": "trailer in last commit"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "eval-1-on-branch-committed",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 53.1,
+        "tokens": 18440,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+          "passed": true,
+          "evidence": "sections found: {\"Summary\": true, \"Changes\": true, \"Testing\": true, \"Related\": true, \"Screenshots/Impact\": true}"
+        },
+        {
+          "text": "PR body prose is in English (low Hangul ratio)",
+          "passed": true,
+          "evidence": "hangul ratio=0.02 (threshold <0.15)"
+        },
+        {
+          "text": "No leftover HTML template comments (<!-- -->) in final body",
+          "passed": true,
+          "evidence": "no '<!--' found"
+        },
+        {
+          "text": "Title follows Conventional Commits",
+          "passed": true,
+          "evidence": "title='fix(api/feedback): reject empty request body with 400'"
+        },
+        {
+          "text": "Generated-with-Claude-Code footer present",
+          "passed": true,
+          "evidence": "footer present"
+        },
+        {
+          "text": "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+          "passed": true,
+          "evidence": "names_check=True has_result=True unchecked_only=False; testing='Ran the repo's checks from `CLAUDE.md`; all passed:\n\n- `npm run test` → `✓ 12 passed (12)`\n- `npm run typecheck` → `tsc '"
+        },
+        {
+          "text": "Did NOT create a new branch (stayed on the existing feature branch)",
+          "passed": true,
+          "evidence": "branch=fix/feedback-empty-body"
+        },
+        {
+          "text": "Only one commit ahead of main (no redundant empty commit)",
+          "passed": true,
+          "evidence": "feature commits ahead=1 (log lines=2)"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "eval-1-on-branch-committed",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 4,
+        "failed": 4,
+        "total": 8,
+        "time_seconds": 45.6,
+        "tokens": 14781,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+          "passed": false,
+          "evidence": "sections found: {\"Summary\": false, \"Changes\": false, \"Testing\": false, \"Related\": false, \"Screenshots/Impact\": false}"
+        },
+        {
+          "text": "PR body prose is in English (low Hangul ratio)",
+          "passed": false,
+          "evidence": "hangul ratio=0.26 (threshold <0.15)"
+        },
+        {
+          "text": "No leftover HTML template comments (<!-- -->) in final body",
+          "passed": true,
+          "evidence": "no '<!--' found"
+        },
+        {
+          "text": "Title follows Conventional Commits",
+          "passed": true,
+          "evidence": "title='fix(api/feedback): reject empty request body with 400'"
+        },
+        {
+          "text": "Generated-with-Claude-Code footer present",
+          "passed": false,
+          "evidence": "footer missing"
+        },
+        {
+          "text": "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+          "passed": false,
+          "evidence": "names_check=False has_result=False unchecked_only=False; testing=''"
+        },
+        {
+          "text": "Did NOT create a new branch (stayed on the existing feature branch)",
+          "passed": true,
+          "evidence": "branch=fix/feedback-empty-body"
+        },
+        {
+          "text": "Only one commit ahead of main (no redundant empty commit)",
+          "passed": true,
+          "evidence": "feature commits ahead=1 (log lines=2)"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "eval-2-main-bugfix-with-todo",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 9,
+        "failed": 0,
+        "total": 9,
+        "time_seconds": 155.8,
+        "tokens": 26659,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+          "passed": true,
+          "evidence": "sections found: {\"Summary\": true, \"Changes\": true, \"Testing\": true, \"Related\": true, \"Screenshots/Impact\": true}"
+        },
+        {
+          "text": "PR body prose is in English (low Hangul ratio)",
+          "passed": true,
+          "evidence": "hangul ratio=0.02 (threshold <0.15)"
+        },
+        {
+          "text": "No leftover HTML template comments (<!-- -->) in final body",
+          "passed": true,
+          "evidence": "no '<!--' found"
+        },
+        {
+          "text": "Title follows Conventional Commits",
+          "passed": true,
+          "evidence": "title='fix(api/feedback): handle empty request body'"
+        },
+        {
+          "text": "Generated-with-Claude-Code footer present",
+          "passed": true,
+          "evidence": "footer present"
+        },
+        {
+          "text": "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+          "passed": true,
+          "evidence": "names_check=True has_result=True unchecked_only=False; testing='- `npm run test` — ✓ 12 passed (12)\n- `npm run typecheck` — tsc --noEmit: no errors\n- `npm run lint` — eslint: no proble'"
+        },
+        {
+          "text": "Branched off main onto a feature branch",
+          "passed": true,
+          "evidence": "branch=fix/feedback-empty-body"
+        },
+        {
+          "text": "Related section references issue #5",
+          "passed": true,
+          "evidence": "related='- Closes #5\n- CLAUDE.md TODO §5: \"에러 응답 데이터 보강. feedback API 빈 body 처리 + trackingId 추가\"\n  (this PR c'"
+        },
+        {
+          "text": "Related section references the CLAUDE.md TODO",
+          "passed": true,
+          "evidence": "related mentions TODO/CLAUDE.md: True"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "eval-2-main-bugfix-with-todo",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.4444,
+        "passed": 4,
+        "failed": 5,
+        "total": 9,
+        "time_seconds": 113.4,
+        "tokens": 21302,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+          "passed": false,
+          "evidence": "sections found: {\"Summary\": false, \"Changes\": false, \"Testing\": false, \"Related\": false, \"Screenshots/Impact\": false}"
+        },
+        {
+          "text": "PR body prose is in English (low Hangul ratio)",
+          "passed": false,
+          "evidence": "hangul ratio=0.39 (threshold <0.15)"
+        },
+        {
+          "text": "No leftover HTML template comments (<!-- -->) in final body",
+          "passed": true,
+          "evidence": "no '<!--' found"
+        },
+        {
+          "text": "Title follows Conventional Commits",
+          "passed": true,
+          "evidence": "title='fix(feedback): empty request body now returns 400 instead of 500'"
+        },
+        {
+          "text": "Generated-with-Claude-Code footer present",
+          "passed": true,
+          "evidence": "footer present"
+        },
+        {
+          "text": "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+          "passed": false,
+          "evidence": "names_check=False has_result=False unchecked_only=False; testing=''"
+        },
+        {
+          "text": "Branched off main onto a feature branch",
+          "passed": true,
+          "evidence": "branch=feat/error-response-data"
+        },
+        {
+          "text": "Related section references issue #5",
+          "passed": false,
+          "evidence": "related=''"
+        },
+        {
+          "text": "Related section references the CLAUDE.md TODO",
+          "passed": false,
+          "evidence": "related mentions TODO/CLAUDE.md: False"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 113.6,
+        "stddev": 53.74,
+        "min": 53.1,
+        "max": 155.8
+      },
+      "tokens": {
+        "mean": 24192.0,
+        "stddev": 4998.1406,
+        "min": 18440,
+        "max": 27477
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.5231,
+        "stddev": 0.0925,
+        "min": 0.4444,
+        "max": 0.625
+      },
+      "time_seconds": {
+        "mean": 87.9333,
+        "stddev": 36.9131,
+        "min": 45.6,
+        "max": 113.4
+      },
+      "tokens": {
+        "mean": 18666.3333,
+        "stddev": 3435.42,
+        "min": 14781,
+        "max": 21302
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.48",
+      "time_seconds": "+25.7",
+      "tokens": "+5526"
+    }
+  },
+  "notes": [
+    "with_skill는 3개 eval 모두 만점(8/8, 8/8, 9/9). baseline은 5/8·4/8·4/9로 일관되게 낮음 — 스킬 효과 뚜렷.",
+    "baseline은 사용자 프롬프트가 한국어라 PR 본문도 매번 한국어로, 섹션 구성이 제각각(개요/동작/검증/남은작업 등). 스킬은 영어 5섹션으로 100% 일관.",
+    "eval-1 baseline은 Testing 섹션이 체크 안 한 체크박스([ ])뿐 — 검증을 실제로 돌리지 않음. with_skill는 실제 npm 체크 결과를 본문에 기록(정직성 차이).",
+    "비차별 assertion 없음: 모든 assertion이 with/without 사이에서 갈림. 'Conventional Commits 제목'은 baseline도 자주 통과(약한 변별).",
+    "스킬은 평균 +25.7초 / +5526 토큰을 더 쓰지만(브랜치 안전처리 + 실제 체크 실행 때문), pass_rate를 +0.48 끌어올림 — 합리적 트레이드오프.",
+    "단일 런(런당 1회)이라 stddev는 변별력 제한적. 신뢰도를 높이려면 런당 2~3회 반복 권장."
+  ]
+}

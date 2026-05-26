@@ -1,0 +1,30 @@
+{
+  "skill_name": "pr-create",
+  "notes": "Each eval runs inside an isolated sandbox git repo built by make_sandbox.sh. The sandbox has a local bare 'origin' so `git push` works, but there is NO GitHub remote, so the actual `gh pr create` cannot run. Each run is told to perform every step EXCEPT the network gh call, and instead write the final PR title to PR_TITLE.txt and the final PR body to PR_BODY.md in the repo root. We grade those artifacts plus the git state (branch, commit).",
+  "evals": [
+    {
+      "id": 0,
+      "name": "on-main-feature",
+      "prompt": "방금 agent-loop 페이지 각 단계에 호버 툴팁 추가하는 작업 끝냈어. PR 올려줘.",
+      "expected_output": "스킬이 main에서 작업 중임을 감지하고 feature 브랜치를 새로 판 뒤, Conventional Commits 커밋 + 5개 섹션이 모두 채워진 영어 PR 본문 생성. Testing 섹션은 실제로 돌린 npm 체크 결과 반영.",
+      "scenario": "on-main-feature",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "on-branch-committed",
+      "prompt": "이 브랜치 작업 다 됐고 커밋도 했어. 리뷰 받게 PR 만들어줘.",
+      "expected_output": "이미 feature 브랜치에 커밋이 있으므로 재브랜치/재커밋하지 않고, 기존 커밋 기준으로 diff를 분석해 템플릿을 채운 PR 본문을 생성. base 브랜치 대비 변경을 정확히 요약.",
+      "scenario": "on-branch-committed",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "main-bugfix-with-todo",
+      "prompt": "feedback API가 빈 body 들어오면 500 나던 거 고쳤어. 관련 TODO는 CLAUDE.md에 있고 이슈 #5야. 풀리퀘 만들어줘.",
+      "expected_output": "main에서 브랜치 분기, fix(...) 제목, Related 섹션에 #5와 CLAUDE.md TODO 링크, Testing 섹션에 실제 돌린 테스트 결과 반영. 안 돌린 검증은 정직하게 표기.",
+      "scenario": "main-bugfix-with-todo",
+      "files": []
+    }
+  ]
+}

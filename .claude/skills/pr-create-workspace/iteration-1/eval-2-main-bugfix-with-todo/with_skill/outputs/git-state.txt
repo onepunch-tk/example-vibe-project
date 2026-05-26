@@ -1,0 +1,15 @@
+BRANCH: fix/feedback-empty-body
+--- log ---
+e59073a fix(api/feedback): handle empty request body
+dfa3e7e chore: project skeleton
+--- status ---
+?? PR_BODY.md
+?? PR_TITLE.txt
+--- last commit full ---
+fix(api/feedback): handle empty request body
+
+Empty POST body caused req.json() to throw, returning a 500. Read the
+raw text first and throw a 400 AppError when it is empty.
+
+Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+

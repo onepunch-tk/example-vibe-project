@@ -1,0 +1,16 @@
+{
+  "eval_id": 2,
+  "eval_name": "eval-2-main-bugfix-with-todo",
+  "prompt": "feedback API가 빈 body 들어오면 500 나던 거 고쳤어. 관련 TODO는 CLAUDE.md에 있고 이슈 #5야. 풀리퀘 만들어줘.",
+  "assertions": [
+    "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+    "PR body prose is in English (low Hangul ratio)",
+    "No leftover HTML template comments (<!-- -->) in final body",
+    "Title follows Conventional Commits",
+    "Generated-with-Claude-Code footer present",
+    "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+    "Branched off main onto a feature branch",
+    "Related section references issue #5",
+    "Related section references the CLAUDE.md TODO"
+  ]
+}

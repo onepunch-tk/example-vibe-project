@@ -1,0 +1,14 @@
+BRANCH: feat/hover-tooltip
+--- log ---
+2ff6008 feat: agent-loop 단계별 호버 툴팁 추가
+5e4c466 chore: project skeleton
+--- status ---
+?? PR_BODY.md
+?? PR_TITLE.txt
+--- last commit full ---
+feat: agent-loop 단계별 호버 툴팁 추가
+
+agent-loop 페이지의 각 단계(plan/act/observe)에 호버 시 설명을 보여주는 StepTooltip 컴포넌트를 추가했습니다.
+
+Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+

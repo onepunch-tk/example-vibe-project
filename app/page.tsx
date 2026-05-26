@@ -10,7 +10,8 @@ export default function Home() {
         </p>
         <h1 className="mb-4 text-4xl font-bold leading-tight">
           <span className="text-brand-gradient">Claude Code 핵심 개념</span>
-          <br />한국어 학습자를 위한 시각 자료
+          <br />
+          한국어 학습자를 위한 시각 자료
         </h1>
         <p className="max-w-2xl text-[var(--color-muted)]">
           이 프로젝트는 강의 실습용 더미 repo입니다. Claude Code 공식 문서의
@@ -48,16 +49,17 @@ export default function Home() {
         <h2 className="mb-4 text-xl font-semibold">학습 흐름</h2>
         <ol className="space-y-2 text-sm text-[var(--color-muted)]">
           <li>
-            <span className="text-[var(--color-fg)]">1.</span> 이 repo를
-            fork → clone → <code>npm install</code> → <code>npm run dev</code>
+            <span className="text-[var(--color-fg)]">1.</span> 이 repo를 fork →
+            clone → <code>npm install</code> → <code>npm run dev</code>
           </li>
           <li>
-            <span className="text-[var(--color-fg)]">2.</span> <code>CLAUDE.md</code>를
-            손수 작성 (Part 1 Ch01 실습 1)
+            <span className="text-[var(--color-fg)]">2.</span>{" "}
+            <code>CLAUDE.md</code>를 손수 작성 (Part 1 Ch01 실습 1)
           </li>
           <li>
-            <span className="text-[var(--color-fg)]">3.</span> <code>IDEAS.md</code>에서
-            하나 골라 Plan → Worktree → Verify 사이클 (Part 1 Ch01 통합 실습)
+            <span className="text-[var(--color-fg)]">3.</span>{" "}
+            <code>IDEAS.md</code>에서 하나 골라 Plan → Worktree → Verify 사이클
+            (Part 1 Ch01 통합 실습)
           </li>
         </ol>
       </section>

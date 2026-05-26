@@ -1,0 +1,15 @@
+{
+  "eval_id": 0,
+  "eval_name": "eval-0-on-main-feature",
+  "prompt": "방금 agent-loop 페이지 각 단계에 호버 툴팁 추가하는 작업 끝냈어. PR 올려줘.",
+  "assertions": [
+    "PR body has all 5 standard sections (Summary, Changes, Testing, Related, Screenshots/Impact)",
+    "PR body prose is in English (low Hangul ratio)",
+    "No leftover HTML template comments (<!-- -->) in final body",
+    "Title follows Conventional Commits",
+    "Generated-with-Claude-Code footer present",
+    "Testing section reflects actually-run checks (names a check + a real result, not blank/unchecked)",
+    "Branched off main onto a feature branch",
+    "Commit message includes Co-Authored-By trailer"
+  ]
+}
