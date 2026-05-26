@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build an isolated sandbox git repo for a pr-create eval.
+# Build an isolated sandbox git repo for a pr-flow eval.
 # Usage: make_sandbox.sh <dest_dir> <scenario>
 # Scenarios: on-main-feature | on-branch-committed | main-bugfix-with-todo
 #

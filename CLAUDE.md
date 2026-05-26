@@ -79,6 +79,12 @@ tests/       # vitest 테스트 (src 밖, 여기에만 위치)
 ### 데이터 페칭
 - `lib/api/fetch-client.ts` `fetchConcepts` 사용
 
+### git 워크플로우
+- plan 승인 후 작업 시작 전, `pr-flow` 스킬로 작업에 맞는 기능 브랜치를 먼저 생성한다.
+  (`ensure-feature-branch` 훅이 main/master 편집을 막아 이를 강제)
+- 작업이 일단락되면 `pr-flow` 스킬로 커밋·push·PR을 만든다.
+  (`auto-pr-on-stop` 훅이 커밋이 있고 PR이 없을 때 draft PR 생성을 유도)
+
 ---
 
 ## 5. 지금 진행 중 (TODO)

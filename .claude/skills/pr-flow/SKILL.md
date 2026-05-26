@@ -1,7 +1,10 @@
 ---
-name: pr-create
+name: pr-flow
 description: >-
-  Create a GitHub pull request with a consistent, fully-filled template.
+  Run the full branch-to-PR flow: create/switch to a feature branch, commit
+  with Conventional Commits, push, and open a GitHub pull request with a
+  consistent, fully-filled template. Also use it just to get off main/master
+  onto a properly named feature branch before starting work.
   Use this whenever the user wants to open/create/submit a PR or pull request,
   says they are "done" and want their work reviewed/merged, asks to "PR 만들어줘"
   / "PR 올려줘" / "풀리퀘 만들어줘", or says to push the work up for review. Also
@@ -112,6 +115,9 @@ Write the filled body to a temp file (avoids shell-escaping problems), then:
 ```bash
 gh pr create --base <base> --title "<conventional title>" --body-file /tmp/pr-body.md
 ```
+
+Add `--draft` when the PR is created automatically (e.g. by the auto-pr-on-stop
+hook) or early while work is still ongoing, so it can be marked ready later.
 
 Append this line to the end of the body before creating:
 
