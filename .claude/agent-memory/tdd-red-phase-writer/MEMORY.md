@@ -1,0 +1,1 @@
+- [Project Test Infrastructure](project-test-infra.md) — vitest 3, jsdom, @testing-library/react 16, tests/ only, Korean it() descriptions, .test.ts files use render(Component()) not JSX
